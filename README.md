@@ -1,3 +1,7 @@
+# Summary
+
+This is a project to show a basic UI test which uses Typescript, Cucumber and Selenium.
+
 # Prerequisites
 
 Run the following commands to install dependencies:
