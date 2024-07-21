@@ -1,21 +1,14 @@
 # Summary
-
 This is a project to show a basic UI test which uses Typescript, Cucumber and Selenium.
 
 # Prerequisites
-
-Run the following commands to install dependencies:
+Install nvm if it's not already installed and run the following commands to install dependencies:
 ```
-npm install --save-dev ts-node
-npm install --save-dev @cucumber/cucumber
-npm install --save-dev selenium-webdriver
-npm install --save-dev @types/selenium-webdriver
-npm install --save-dev @types/fs-extra
-npm install --save-dev multiple-cucumber-html-reporter
+nvm use
+npm install
 ```
 
 # Run tests
-
 Run the following:
 ```
 ./run_tests.sh
