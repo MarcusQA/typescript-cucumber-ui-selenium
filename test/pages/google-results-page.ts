@@ -1,5 +1,5 @@
-import { By, WebDriver, WebElement } from "selenium-webdriver";
-import { driver } from "../steps/hooks";
+import { By, WebDriver, WebElement } from 'selenium-webdriver';
+import { driver } from '../steps/hooks';
 
 export class GoogleResultsPage {
   private driver: WebDriver;
@@ -9,7 +9,7 @@ export class GoogleResultsPage {
   }
 
   async pageContains(expectedResult: string): Promise<boolean> {
-    const searchResults: WebElement[] = await driver.findElements(By.css("h3"));
+    const searchResults: WebElement[] = await driver.findElements(By.css('h3'));
 
     let containsExpectedResult: boolean = false;
     for (const result of searchResults) {

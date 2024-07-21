@@ -4,10 +4,10 @@ import {
   AfterStep,
   AfterAll,
   Status,
-} from "@cucumber/cucumber";
-import { WebDriver, Capabilities, Builder } from "selenium-webdriver";
-import { writeFileSync } from "fs";
-import fs from "fs-extra";
+} from '@cucumber/cucumber';
+import { WebDriver, Capabilities, Builder } from 'selenium-webdriver';
+import { writeFileSync } from 'fs';
+import fs from 'fs-extra';
 
 export let driver: WebDriver;
 
@@ -28,7 +28,7 @@ AfterStep(async function (scenario) {
     await driver.manage().window().maximize();
 
     const screenshot = await driver.takeScreenshot();
-    const screenshotFolder = "cucumber-report/screenshots";
+    const screenshotFolder = 'cucumber-report/screenshots';
 
     if (fs.existsSync(screenshotFolder)) {
       fs.removeSync(screenshotFolder);
@@ -37,15 +37,15 @@ AfterStep(async function (scenario) {
     fs.mkdirSync(screenshotFolder);
 
     const screenshotFileName = `${screenshotFolder}/${scenario.pickle.name} - page where failure occurred.png`;
-    writeFileSync(screenshotFileName, screenshot, "base64");
-    this.attach(screenshot, { mediaType: "base64:image/png" });
+    writeFileSync(screenshotFileName, screenshot, 'base64');
+    this.attach(screenshot, { mediaType: 'base64:image/png' });
 
     await driver.navigate().back();
 
     const previousScreenshot = await driver.takeScreenshot();
     const previousScreenshotFileName = `${screenshotFolder}/${scenario.pickle.name} - page before failure.png`;
-    writeFileSync(previousScreenshotFileName, previousScreenshot, "base64");
-    this.attach(previousScreenshot, { mediaType: "base64:image/png" });
+    writeFileSync(previousScreenshotFileName, previousScreenshot, 'base64');
+    this.attach(previousScreenshot, { mediaType: 'base64:image/png' });
   }
 });
 
