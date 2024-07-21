@@ -1,4 +1,5 @@
 #!/bin/bash
 
+npm run build
 npm test
-node cucumber-report-generator.ts
+node test/report/cucumber-report-generator.ts

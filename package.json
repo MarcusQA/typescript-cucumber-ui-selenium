@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "Project to show a basic UI test which uses Typescript, Cucumber and Selenium",
   "scripts": {
+    "build": "tsc",
     "test": "cucumber-js --format json:cucumber-report/report.json"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.4.0",
     "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.14.11",
     "@types/selenium-webdriver": "^4.1.22",
     "multiple-cucumber-html-reporter": "^3.6.2",
     "selenium-webdriver": "^4.19.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
   }
 }
